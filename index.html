@@ -11,7 +11,8 @@
 
 <body>
 
-  <script src="javascript/game.js"></script>
+<!--  <script src="assets/javascript/gameX.js"></script> -->
+<!--<script src="assets/javascript/game.js"></script>-->
 
 <!--Set up HTML for psychic game.  -->
 <!--Header  -->
@@ -19,13 +20,13 @@
 <!--Instruction  -->
 <h3>Press the letter you believe I have selected.</h3>
 <!--Display Win Counter variable-->
-<h5 id="wins">Wins:</h5>
+<h5>Wins: <span id="wins"></span></h5>
 <!--Display Loss Counter  variable-->
-<h5 id="losses">Losses:</h5>
+<h5>Losses: <span id="losses"></span></h5>
 <!--Remaining attempts variable  -->
-<h5 id="remaining">Guesses Left:</h5>
+<h5>Guesses remaining: <span id="remaining"></span></h5>
 <!--Push attempt selections array -->
-<h5>Your guesses so far:</h5>
+<h5>Your guesses so far: <span id="array"></span></h5>
 <!--Capture a keypress  -->
 <!--Convert to lowercase -->
 <!--Generate random letter selected by computer  -->
@@ -35,10 +36,7 @@
 <!--Increment losses if guesses < 1  -->
 
 
-
-
-
-
+<script src="assets/javascript/game.js"></script>
 
 </body>
 </html>
