@@ -1,26 +1,28 @@
 //Declare variables for counters and arrays.
 var wins = 0;
 var losses = 0;
-var guesses = 9;
 var guessArray = [];
+var guesses = 9;
 
 var alphArray = ["a","b","c","d","e"];
 
-//Function executes when key is pressed
-document.onkeyup = function(event) {
-  //Determines which key is pressed.  Later convert to lowercase
-  var userGuess = event.key;
-
-  //Generate a random letter by the computer.
+if (guesses === 9) {
   var compRandom = alphArray[Math.floor(Math.random() * alphArray.length)];
+}
 
+//Function executes when key is pressed
+document.onkeyup = function userGuess(event) {
+  //Determines which key is pressed.  Later convert to lowercase
+  var userPress = event.key;
+  var userGuess = userPress.toLowerCase();
+  //Generate a random letter by the computer.
   //Compare keypress to random and increment or decrement accordingly using functions.
   //console.log(document); //Hima suggested.  I don't understand.
-  console.log(userGuess);
   console.log(compRandom);
-  console.log(guesses)
+  console.log(userGuess);
+  console.log(guesses);
 
-  if (guesses = 0) {
+  if (guesses === 0) {
     alert("guesses = " + guesses);
     loss();
     //Reset game.
@@ -42,6 +44,7 @@ document.onkeyup = function(event) {
   function hit() {
     //increment counter
     wins++;
+    guesses = 9;
     //Write out result.
     document.querySelector("#wins").innerHTML = wins;
     //Reset guesses counter to end loop.
@@ -49,6 +52,7 @@ document.onkeyup = function(event) {
   }
 
   function miss() {
+    //guesses = guesses - 1;
     guesses--;
     //Write out result.
     document.querySelector("#remaining").innerHTML = guesses;
@@ -57,6 +61,7 @@ document.onkeyup = function(event) {
 
   function loss() {
     losses++;
+    guesses = 9;
     //Write out result.
     document.querySelector("#losses").innerHTML = losses;
     //Reset guesses counter to end loop.
